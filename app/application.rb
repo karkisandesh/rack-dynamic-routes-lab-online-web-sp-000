@@ -11,7 +11,7 @@ class Application
     if req.path =="/items/item_name"
       resp.write "#{item_name.price}"
     else
-      resp.write "Route not found"
+      resp.write "Item not found"
       resp.status = 404
     end
  

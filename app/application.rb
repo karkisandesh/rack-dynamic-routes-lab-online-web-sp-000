@@ -12,7 +12,6 @@ class Application
 
       item = @@items.find{|i| i.name == item_name}
 
-
       if item.nil?
         resp.write "Item not found"
         resp.status = 400
@@ -24,7 +23,6 @@ class Application
       resp.status = 404
     end
 
- 
     resp.finish
   end
 end

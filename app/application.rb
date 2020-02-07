@@ -1,15 +1,18 @@
 class Application
-  
+   
+   @@items = []
    
    def call(env)
     resp = Rack::Response.new
     req = Rack::Request.new(env)
- 
-    if req.path=="/songs"
-      resp.write "You requested the songs"
+    
+    item_name = @@items.each {|i| i.name}
+    
+    if req.path =="/items/item_name"
+      resp.write "#{item_name.price}"
     else
       resp.write "Route not found"
-      resp.status = 404
+      resp.status = 400
     end
  
     resp.finish

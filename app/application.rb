@@ -7,9 +7,9 @@ class Application
     req = Rack::Request.new(env)
     
     if req.path =="/items/"
-      item_name = req.path.split("/items/").first
+      item= req.path.split("/items/").first
 
-      item = @@items.find{|i| i.name == item_name}
+      item_name = @@items.find{|i| i.name == item}
 
       if item.nil?
         resp.write "Item not found"

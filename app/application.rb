@@ -9,6 +9,7 @@ class Application
     item_name = @@items.each {|i| i.name}
     
     if req.path =="/items/item_name"
+      binding.pry
       resp.write "#{item_name.price}"
     else
       resp.write "Route not found"

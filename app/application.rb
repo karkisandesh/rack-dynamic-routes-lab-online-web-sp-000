@@ -10,8 +10,7 @@ class Application
 
       item_name = @@items.find{|i| i.name == item}
 
-    if req.path =="/items/item_name"
-        !item_name.nil?
+    if req.path."/items/item_name"
         resp.write "#{item_name.price}"
     else
       resp.write "Item not found"

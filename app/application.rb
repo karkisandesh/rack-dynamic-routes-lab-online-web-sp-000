@@ -5,11 +5,12 @@ class Application
    def call(env)
     resp = Rack::Response.new
     req = Rack::Request.new(env)
-    
-    if req.path =="/items/"
+
       item= req.path.split("/items/").first
 
       item_name = @@items.find{|i| i.name == item}
+
+    if req.path =="/items/item_name"
 
       if item.nil?
         resp.write "Item not found"

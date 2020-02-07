@@ -12,7 +12,7 @@ class Application
 
     if req.path =="/items/item_name"
 
-      if item.nil?
+      if item_name.nil?
         resp.write "Item not found"
         resp.status = 400
       else
